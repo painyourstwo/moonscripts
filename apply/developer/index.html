@@ -1,40 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Developer Application</title>
+<form id="appForm">
+    <input type="text" id="discord" placeholder="Discord Username" required>
+    <br><br>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <button type="submit">Submit</button>
+</form>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
+<script>
+document.getElementById("appForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-body{
-min-height:100vh;
-background:linear-gradient(135deg,#7b2cff,#0066ff);
-font-family:Arial,sans-serif;
-color:white;
-padding:30px;
-}
+    const response = await fetch("/api/apply", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            discord: document.getElementById("discord").value
+        })
+    });
 
-.container{
-max-width:900px;
-margin:auto;
-text-align:center;
-}
-
-h1{
-font-family:'Cinzel',serif;
-font-size:clamp(2rem,8vw,5rem);
-margin-bottom:30px;
-}
-
-.card{
-background:rgba(255,255,255,.12);
-padding:30px;
-border-radius:18px;
-}
+    if(response.ok){
+        alert("Submitted!");
+    }else{
+        alert("Failed!");
+    }
+});
+</script>}
 
 p{
 line-height:1.8;
