@@ -3,132 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MoonScripts</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html,body{
-    width:100%;
-    min-height:100vh;
-    overflow-x:hidden;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:linear-gradient(135deg,#7b2cff,#0066ff);
-    color:white;
-    font-family:Arial,sans-serif;
-    padding:20px;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#7b2cff,#0066ff);
+font-family:Arial,sans-serif;
+color:white;
+padding:20px;
 }
 
 .container{
-    width:100%;
-    max-width:900px;
-    margin:auto;
+max-width:900px;
+width:100%;
 }
 
 h1{
-    font-family:'Cinzel',serif;
-    font-size:clamp(2rem,8vw,5.5rem);
-    letter-spacing:clamp(1px,0.5vw,4px);
-    margin-bottom:20px;
-    text-shadow:0 0 25px rgba(255,255,255,0.3);
-    line-height:1.1;
+font-family:'Cinzel',serif;
+font-size:clamp(2rem,8vw,5.5rem);
+margin-bottom:20px;
 }
 
 p{
-    font-size:clamp(1rem,2.5vw,1.4rem);
-    line-height:1.6;
-    margin-bottom:35px;
-    opacity:0.95;
+font-size:clamp(1rem,2vw,1.3rem);
+margin-bottom:30px;
+line-height:1.6;
 }
 
 .buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .btn{
-    text-decoration:none;
-    color:white;
-    padding:14px 30px;
-    font-size:clamp(1rem,2vw,1.2rem);
-    border-radius:14px;
-    background:rgba(255,255,255,0.15);
-    border:1px solid rgba(255,255,255,0.2);
-    backdrop-filter:blur(12px);
-    transition:0.25s ease;
-    font-weight:bold;
+text-decoration:none;
+color:white;
+padding:14px 28px;
+border-radius:12px;
+background:rgba(255,255,255,.15);
+border:1px solid rgba(255,255,255,.2);
+font-weight:bold;
 }
 
-.btn:hover{
-    transform:translateY(-4px);
-    background:rgba(255,255,255,0.25);
+@media(max-width:768px){
+.buttons{
+flex-direction:column;
+align-items:center;
 }
-
-@media (max-width:768px){
-
-    body{
-        padding:15px;
-    }
-
-    h1{
-        font-size:2.6rem;
-    }
-
-    p{
-        font-size:1rem;
-    }
-
-    .buttons{
-        flex-direction:column;
-        align-items:center;
-        width:100%;
-    }
-
-    .btn{
-        width:100%;
-        max-width:320px;
-    }
+.btn{
+width:100%;
+max-width:300px;
+}
 }
 </style>
 </head>
 <body>
 
 <div class="container">
+<h1>WELCOME TO MOONSCRIPTS</h1>
 
-    <h1>WELCOME TO MOONSCRIPTS</h1>
+<p>
+A growing scripting community looking for developers and creators.
+</p>
 
-    <p>
-        We are a new scripting community focused on helping developers,
-        sharing projects, and building cool things together.
-        <br><br>
-        We are currently looking for developers to join our team.
-    </p>
-
-    <div class="buttons">
-        <a class="btn" href="https://discord.gg/wwfZMCVzsH">
-            Join Discord
-        </a>
-
-        <a class="btn" href="#about">
-            About Us
-        </a>
-    </div>
-
+<div class="buttons">
+<a class="btn" href="https://discord.gg/wwfZMCVzsH">Join Discord</a>
+<a class="btn" href="/information">About Us</a>
+</div>
 </div>
 
 </body>
