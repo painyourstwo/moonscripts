@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoonScripts</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#6a00ff,#0066ff);
+    font-family:Arial,sans-serif;
+    color:white;
+}
+
+.container{
+    max-width:800px;
+    padding:20px;
+}
+
+h1{
+    font-family:'Cinzel',serif;
+    font-size:4rem;
+    letter-spacing:4px;
+    margin-bottom:20px;
+    text-shadow:0 0 20px rgba(255,255,255,0.4);
+}
+
+p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+    opacity:0.9;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    color:white;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.25);
+    padding:14px 28px;
+    border-radius:12px;
+    backdrop-filter:blur(10px);
+    transition:.3s;
+    font-weight:bold;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,0.25);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>WELCOME TO MOONSCRIPTS</h1>
+
+    <p>
+        We are a new scripting community looking to grow and help developers.
+        We're currently looking for developers to join our team.
+    </p>
+
+    <div class="buttons">
+        <a class="btn" href="https://discord.gg/wwfZMCVzsH">Join Discord</a>
+        <a class="btn" href="#about">About Us</a>
+    </div>
+</div>
+
+</body>
+</html>
