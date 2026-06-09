@@ -15,8 +15,13 @@
     box-sizing:border-box;
 }
 
-body{
+html,body{
+    width:100%;
     min-height:100vh;
+    overflow-x:hidden;
+}
+
+body{
     display:flex;
     justify-content:center;
     align-items:center;
@@ -25,23 +30,25 @@ body{
     color:white;
     font-family:Arial,sans-serif;
     padding:20px;
-    overflow:hidden;
 }
 
 .container{
-    width:min(90%,900px);
+    width:100%;
+    max-width:900px;
+    margin:auto;
 }
 
 h1{
     font-family:'Cinzel',serif;
-    font-size:clamp(2.5rem,8vw,5.5rem);
-    letter-spacing:4px;
+    font-size:clamp(2rem,8vw,5.5rem);
+    letter-spacing:clamp(1px,0.5vw,4px);
     margin-bottom:20px;
     text-shadow:0 0 25px rgba(255,255,255,0.3);
+    line-height:1.1;
 }
 
 p{
-    font-size:clamp(1rem,3vw,1.4rem);
+    font-size:clamp(1rem,2.5vw,1.4rem);
     line-height:1.6;
     margin-bottom:35px;
     opacity:0.95;
@@ -57,7 +64,7 @@ p{
 .btn{
     text-decoration:none;
     color:white;
-    padding:clamp(12px,2vw,18px) clamp(24px,4vw,36px);
+    padding:14px 30px;
     font-size:clamp(1rem,2vw,1.2rem);
     border-radius:14px;
     background:rgba(255,255,255,0.15);
@@ -72,14 +79,29 @@ p{
     background:rgba(255,255,255,0.25);
 }
 
-@media (max-width: 600px){
+@media (max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    h1{
+        font-size:2.6rem;
+    }
+
+    p{
+        font-size:1rem;
+    }
+
     .buttons{
         flex-direction:column;
         align-items:center;
+        width:100%;
     }
 
     .btn{
-        width:220px;
+        width:100%;
+        max-width:320px;
     }
 }
 </style>
@@ -87,6 +109,7 @@ p{
 <body>
 
 <div class="container">
+
     <h1>WELCOME TO MOONSCRIPTS</h1>
 
     <p>
@@ -97,4 +120,16 @@ p{
     </p>
 
     <div class="buttons">
-        <a class="btn" href="
+        <a class="btn" href="https://discord.gg/wwfZMCVzsH">
+            Join Discord
+        </a>
+
+        <a class="btn" href="#about">
+            About Us
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
