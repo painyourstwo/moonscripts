@@ -1,13 +1,160 @@
-<form id="appForm">
-    <input type="text" id="discord" placeholder="Discord Username" required>
-    <br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <button type="submit">Submit</button>
+<title>Developer Application</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#7b2cff,#0066ff);
+font-family:Arial,sans-serif;
+color:white;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+}
+
+h1{
+font-family:'Cinzel',serif;
+font-size:clamp(2rem,8vw,5rem);
+text-align:center;
+margin-bottom:25px;
+}
+
+.card{
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:20px;
+}
+
+label{
+display:block;
+margin-top:18px;
+margin-bottom:8px;
+font-weight:bold;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+font-size:16px;
+background:rgba(255,255,255,.15);
+color:white;
+}
+
+input::placeholder,
+textarea::placeholder{
+color:rgba(255,255,255,.75);
+}
+
+textarea{
+resize:vertical;
+min-height:120px;
+}
+
+button{
+margin-top:25px;
+width:100%;
+padding:16px;
+border:none;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+background:white;
+color:#4b00ff;
+}
+
+button:hover{
+opacity:.9;
+}
+
+#status{
+margin-top:15px;
+text-align:center;
+font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>DEVELOPER APPLICATION</h1>
+
+<div class="card">
+
+<form id="appForm">
+
+<label>What is your Discord username? *</label>
+<input type="text" id="discord" required>
+
+<label>How experienced are you in scripting? *</label>
+<select id="experience" required>
+<option value="">Select...</option>
+<option>Beginner</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+<option>Expert</option>
+</select>
+
+<label>What scripting languages do you know? *</label>
+<input type="text" id="languages" required>
+
+<label>What projects have you worked on before? *</label>
+<textarea id="projects" required></textarea>
+
+<label>Can you provide links or examples of your work? *</label>
+<textarea id="portfolio" required></textarea>
+
+<label>Why do you want to join MoonScripts? *</label>
+<textarea id="reason" required></textarea>
+
+<label>How active can you be each week? *</label>
+<input type="text" id="activity" required>
+
+<label>What makes you a good fit for the team? *</label>
+<textarea id="fit" required></textarea>
+
+<label>Anything else you'd like us to know?</label>
+<textarea id="notes"></textarea>
+
+<button type="submit">Submit Application</button>
+
 </form>
+
+<div id="status"></div>
+
+</div>
+
+</div>
 
 <script>
 document.getElementById("appForm").addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    const status = document.getElementById("status");
+
+    status.textContent = "Submitting...";
 
     const response = await fetch("/api/apply", {
         method: "POST",
@@ -15,26 +162,29 @@ document.getElementById("appForm").addEventListener("submit", async (e) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            discord: document.getElementById("discord").value
+            discord: document.getElementById("discord").value,
+            experience: document.getElementById("experience").value,
+            languages: document.getElementById("languages").value,
+            projects: document.getElementById("projects").value,
+            portfolio: document.getElementById("portfolio").value,
+            reason: document.getElementById("reason").value,
+            activity: document.getElementById("activity").value,
+            fit: document.getElementById("fit").value,
+            notes: document.getElementById("notes").value
         })
     });
 
     if(response.ok){
-        alert("Submitted!");
+        status.textContent = "✅ Application submitted successfully!";
+        document.getElementById("appForm").reset();
     }else{
-        alert("Failed!");
+        status.textContent = "❌ Failed to submit application.";
     }
 });
-</script>}
+</script>
 
-p{
-line-height:1.8;
-margin-bottom:20px;
-font-size:clamp(1rem,2vw,1.2rem);
-}
-
-ul{
-max-width:600px;
+</body>
+</html>max-width:600px;
 margin:auto;
 text-align:left;
 line-height:1.8;
