@@ -3,15 +3,15 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: "Method not allowed" });
     }
 
-    const webhook = process.env.WEBHOOK_URL;
+    const { discord } = req.body;
 
-    await fetch(webhook, {
+    await fetch(process.env.WEBHOOK_URL, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            content: "🚀 Test application received!"
+            content: `📩 Test Application\n\nDiscord: ${discord}`
         })
     });
 
