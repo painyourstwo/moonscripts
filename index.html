@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MoonScripts</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
@@ -20,52 +21,66 @@ body{
     justify-content:center;
     align-items:center;
     text-align:center;
-    background:linear-gradient(135deg,#6a00ff,#0066ff);
-    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#7b2cff,#0066ff);
     color:white;
+    font-family:Arial,sans-serif;
+    padding:20px;
+    overflow:hidden;
 }
 
 .container{
-    max-width:800px;
-    padding:20px;
+    width:min(90%,900px);
 }
 
 h1{
     font-family:'Cinzel',serif;
-    font-size:4rem;
+    font-size:clamp(2.5rem,8vw,5.5rem);
     letter-spacing:4px;
     margin-bottom:20px;
-    text-shadow:0 0 20px rgba(255,255,255,0.4);
+    text-shadow:0 0 25px rgba(255,255,255,0.3);
 }
 
 p{
-    font-size:1.2rem;
-    margin-bottom:30px;
-    opacity:0.9;
+    font-size:clamp(1rem,3vw,1.4rem);
+    line-height:1.6;
+    margin-bottom:35px;
+    opacity:0.95;
 }
 
 .buttons{
     display:flex;
-    gap:15px;
     justify-content:center;
+    gap:15px;
     flex-wrap:wrap;
 }
 
 .btn{
     text-decoration:none;
     color:white;
+    padding:clamp(12px,2vw,18px) clamp(24px,4vw,36px);
+    font-size:clamp(1rem,2vw,1.2rem);
+    border-radius:14px;
     background:rgba(255,255,255,0.15);
-    border:1px solid rgba(255,255,255,0.25);
-    padding:14px 28px;
-    border-radius:12px;
-    backdrop-filter:blur(10px);
-    transition:.3s;
+    border:1px solid rgba(255,255,255,0.2);
+    backdrop-filter:blur(12px);
+    transition:0.25s ease;
     font-weight:bold;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+    transform:translateY(-4px);
     background:rgba(255,255,255,0.25);
+}
+
+@media (max-width: 600px){
+    .buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn{
+        width:220px;
+    }
 }
 </style>
 </head>
@@ -75,15 +90,11 @@ p{
     <h1>WELCOME TO MOONSCRIPTS</h1>
 
     <p>
-        We are a new scripting community looking to grow and help developers.
-        We're currently looking for developers to join our team.
+        We are a new scripting community focused on helping developers,
+        sharing projects, and building cool things together.
+        <br><br>
+        We are currently looking for developers to join our team.
     </p>
 
     <div class="buttons">
-        <a class="btn" href="https://discord.gg/wwfZMCVzsH">Join Discord</a>
-        <a class="btn" href="#about">About Us</a>
-    </div>
-</div>
-
-</body>
-</html>
+        <a class="btn" href="
