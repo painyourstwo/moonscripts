@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MoonScripts</title>
+<title>Rezo Hub - lwkmash</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 min-height:100vh;
@@ -16,9 +20,9 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(135deg,#7b2cff,#0066ff);
+background:linear-gradient(135deg,#f7d774,#b8860b);
 font-family:Arial,sans-serif;
-color:white;
+color:#fff8dc;
 padding:20px;
 }
 
@@ -31,10 +35,71 @@ h1{
 font-family:'Cinzel',serif;
 font-size:clamp(2rem,8vw,5.5rem);
 margin-bottom:20px;
+text-shadow:0 0 20px rgba(255,248,220,.4);
 }
 
 p{
 font-size:clamp(1rem,2vw,1.3rem);
+margin-bottom:30px;
+line-height:1.6;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+text-decoration:none;
+color:#fff8dc;
+padding:14px 28px;
+border-radius:12px;
+background:rgba(139,69,19,.25);
+border:1px solid rgba(255,248,220,.4);
+font-weight:bold;
+transition:.25s;
+backdrop-filter:blur(8px);
+}
+
+.btn:hover{
+transform:translateY(-3px);
+background:rgba(139,69,19,.4);
+}
+
+@media(max-width:768px){
+.buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.btn{
+width:100%;
+max-width:300px;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>WELCOME TO<br>REZO HUB - LWKMASH</h1>
+
+<p>
+A growing scripting community for developers, creators, and innovators.
+</p>
+
+<div class="buttons">
+<a class="btn" href="https://discord.gg/wwfZMCVzsH">Join Discord</a>
+<a class="btn" href="/information">About Us</a>
+</div>
+
+</div>
+
+</body>
+</html>font-size:clamp(1rem,2vw,1.3rem);
 margin-bottom:30px;
 line-height:1.6;
 }
